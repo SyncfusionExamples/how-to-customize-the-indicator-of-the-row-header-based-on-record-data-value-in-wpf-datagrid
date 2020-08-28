@@ -1,0 +1,61 @@
+﻿<Window x:Class="SfDataGridDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:SfDataGridDemo"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        Title="SfDataGrid Demo"
+        Width="1024"
+        Height="710"
+        Icon="App.ico"
+        WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <local:ViewModel />
+    </Window.DataContext>
+
+    <Window.Resources>
+        <local:RowIndicatorConverter x:Key="converter"/>
+        <Style TargetType="syncfusion:GridRowHeaderCell">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="syncfusion:GridRowHeaderCell">
+                        <Border x:Name="PART_RowHeaderCellBorder"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                            <Grid>
+                                <Path 
+                                  Margin="2"
+                                  Width="10"
+                                  Height="10"
+                                  Data="{Binding DataChanged, Converter={StaticResource converter}}"
+                                  Fill="{TemplateBinding Foreground}"
+                                  Stretch="Uniform"/>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <syncfusion:SfDataGrid x:Name="sfDataGrid"
+                               AllowEditing="True"
+                               AllowFiltering="True"
+                               AllowGrouping="True"
+                               AllowSorting="True"
+                               AutoGenerateColumns="False"
+                               ColumnSizer="Auto"
+                               ItemsSource="{Binding OrderInfoCollection}"
+                               ShowRowHeader="True">
+
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridTextColumn HeaderText="Order  id" MappingName="OrderID" />
+                <syncfusion:GridTextColumn HeaderText="Customer id" MappingName="CustomerID" />
+                <syncfusion:GridTextColumn HeaderText="Customer Name" MappingName="CustomerName" />
+                <syncfusion:GridTextColumn HeaderText="Ship City" MappingName="ShipCity" />
+                <syncfusion:GridTextColumn HeaderText="Country" MappingName="Country" />
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+    </Grid>
+</Window>
