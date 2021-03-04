@@ -1,8 +1,10 @@
 # How to customize the indicator of the Row header based on record data value in WPF DataGrid(SfDataGrid)?
 
-How to customize the indicator of the Row header based on record data value in WPF DataGrid(SfDataGrid)?
+How to customize the indicator of the Row header based on record data value in [WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid)?
 
 # About the sample
+
+In [WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid), you can change the row indicator based on data by customizing the ControlTemplate of Syncfusion.GridRowHeaderCell
 
 ```xml
 <Window.Resources>
