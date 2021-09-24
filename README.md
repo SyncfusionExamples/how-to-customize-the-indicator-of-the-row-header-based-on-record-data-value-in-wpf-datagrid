@@ -53,5 +53,8 @@ public class RowIndicatorConverter : IValueConverter
     }
 }
 ```
+
+KB article - [How to customize the indicator of the Row header based on record data value in WPF DataGrid(SfDataGrid)?](https://www.syncfusion.com/kb/11916/how-to-customize-the-indicator-of-the-row-header-based-on-record-data-value-in-wpf-datagrid)
+
 ## Requirements to run the demo
  Visual Studio 2015 and above versions
